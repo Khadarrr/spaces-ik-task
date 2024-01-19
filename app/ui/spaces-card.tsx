@@ -32,8 +32,7 @@ const MapComponent: React.FC<{ location: [number, number] }> = ({ location }) =>
       }
 
       const L = await import("leaflet");
-      await import("leaflet/dist/leaflet.css");
-      await import("leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css");
+  
 
       leafletMapInstance.current = L.map(mapElementId).setView(location, 15);
 
