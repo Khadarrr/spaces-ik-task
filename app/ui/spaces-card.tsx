@@ -6,9 +6,15 @@ import 'leaflet/dist/leaflet.css';
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import Link from 'next/link';
 
-const supabaseUrl = "https://gqfjcwerdsrxisvccceu.supabase.co"
-const supabaseKey = "process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY"
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error('Supabase URL or key is undefined');
+}
+
 const supabase = createClient(supabaseUrl, supabaseKey);
+
 
 
 interface VenueData {
@@ -59,7 +65,7 @@ const Card: React.FC = () => {
     try {
       // Insert and retrieve data from Supabase
       const { data: insertedData, error: insertError } = await supabase
-        .from<VenueData>("venues")
+        .from("venues")
         .upsert([
           {
             id: 101,
@@ -86,7 +92,7 @@ const Card: React.FC = () => {
       console.log("Venue inserted successfully:", insertedData);
 
       const { data: selectedData, error: selectError } = await supabase
-        .from<VenueData>("venues")
+        .from("venues")
         .select("*"); // Retrieve all columns
 
       if (selectError) {
