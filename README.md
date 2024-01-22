@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+MVP Project Report - Event Posting and Management Site
 
-## Getting Started
+Introduction
+The MVP project aimed to create an event site that allows users to post and manage events(later for something). The primary technologies utilized for the project were Next.js with TypeScript. The project also integrated data storage using Supabase, including event information and coordinates for mapping. The deployment through Vercel.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Supabase was selected as the database solution for storing event information. Its simplicity and real-time capabilities were key factors in the decision, first time doing using it.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+LeafletMap:
+The LeafletMap library was employed to display maps on the site. It was utilized to showcase event locations through coordinates.
+Vercel:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Vercel served as the deployment platform for the project. Its seamless integration with Next.js and ease of use were instrumental in deploying the site efficiently.
+MVP Features
+Event Posting:
 
-## Learn More
+Users can post events by providing essential details such as event name, date, time, location, and a brief description.
+Event Management:
 
-To learn more about Next.js, take a look at the following resources:
+A straightforward interface enables users to manage their posted events. They can edit or delete events as needed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Event data is stored in Supabase, allowing for efficient data management and retrieval.
+Map Integration:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Coordinates associated with each event are utilized to display interactive maps using LeafletMap, providing users with a visual representation of event locations.
+Challenges Faced
+Learning Curve:
 
-## Deploy on Vercel
+As it was the first time using Next.js with TypeScript, there was a learning curve. However, this challenge was overcome by leveraging documentation and community resources.
+Map Integration Issues:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Challenges were encountered during the integration of LeafletMap for displaying event locations. Debugging and troubleshooting were necessary, but a satisfactory solution was achieved.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Conclusion
+
+The initiation of the MVP project marked a promising beginning, though there is room for further integration in the future. Collaborative consultations with Kristoffer greatly aided in identifying key focal points and enhancing time management throughout the development process.
+Notably, transitioning from JavaScript to TypeScript for the first time posed a unique set of challenges during the deployment phase. The slightly extended deployment duration was attributed to TypeScript's stricter rules, presenting a learning curve. However, this experience has proven invaluable, providing a deeper understanding of TypeScript nuances for future projects. The collaborative effort and challenges encountered have laid a solid foundation for future improvements and iterations on the project.
